@@ -4,7 +4,6 @@ body
   background-color: utils.$white-main
 
 .main-container
-  position: relative
   display: flex
   justify-content: space-between
   inline-size: 1000px
@@ -22,14 +21,23 @@ body
   inline-size: 70%
 
 .container-commands
-  position: absolute
-  left:400px
+  z-index: 2
+  position: relative
   inline-size: 200px
   block-size: 100%
-  background-color: utils.$test
+  overflow: hidden
   &__pictoflex
     display: flex
-  
+
+.container-conmmand__fond
+  top: 0
+  left: -50%
+  position: absolute
+  inline-size: 100%
+  block-size: 100%
+  background-color: utils.$fond-joueur-actif
+  z-index: -1
+
 .container-player,
 .container-commands,
 .container-player__current-score-block
