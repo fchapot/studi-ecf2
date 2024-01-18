@@ -1,0 +1,39 @@
+@use '../utils'
+  
+body
+  background-color: utils.$white-main
+
+.main-container
+  position: relative
+  display: flex
+  justify-content: space-between
+  inline-size: 1000px
+  block-size: 700px
+  margin-block-start: 200px
+  margin-inline: auto
+  background-color: utils.$white-main
+  border: solid 20px utils.$backgroundcolor
+
+
+.container-player__1
+  background-color: utils.$fond-joueur-actif
+
+.container-player
+  inline-size: 70%
+
+.container-commands
+  position: absolute
+  left:400px
+  inline-size: 200px
+  block-size: 100%
+  background-color: utils.$test
+  &__pictoflex
+    display: flex
+  
+.container-player,
+.container-commands,
+.container-player__current-score-block
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
