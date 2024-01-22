@@ -1,26 +1,64 @@
-@use '../utils'
+@use '../utils/theme'
+@use '../utils/mixins'
   
 body
-  background-color: utils.$white-main
+  font-family: theme.$font-sans-serif
+  color: theme.$black-typo
+  font-weight: 100
+  text-transform: uppercase
 
 .main-container
   display: flex
   justify-content: space-between
-  inline-size: 1000px
-  block-size: 700px
+  inline-size: 850px
+  block-size: 520px
   margin-block-start: 200px
   margin-inline: auto
-  background-color: utils.$white-main
-  border: solid 20px utils.$backgroundcolor
-
+  background-color: theme.$white-main
+  box-shadow: 0px 0px 0px 20px theme.$brown-border
 
 .container-player__1
-  background-color: utils.$fond-joueur-actif
+  background-color: theme.$fond-joueur-actif
 
 .container-player
   inline-size: 70%
+  &__player
+    @include mixins.flexCenter
+    span
+      visibility: hidden
+      color: theme.$red
+      font-size: 40px
+      margin-inline-start: 6px
+  &--activ
+    color: theme.$black-typo
+    & span
+      visibility: visible
+  &__current-score-block
+    font-weight: 300
+    min-inline-size: 100px
+    min-block-size: 70px
+    background: theme.$red
+    &--text
+      font-size: 14px
+      margin-block-end: 4px
+    &--score
+      font-size: 20px
+      color: theme.$white-main
+  &__h1
+    font-size: 40px
+    text-transform: uppercase
+    margin-inline-start: 30px
+    color: theme.$grey-typo
+    
+    &--activ
+      color: theme.$black-typo
+  &__score
+    font-size: 70px
+    color: theme.$red
+    margin-block: 8px 90px
 
 .container-commands
+  font-size: 12px
   z-index: 2
   position: relative
   inline-size: 200px
@@ -29,19 +67,18 @@ body
   &__pictoflex
     display: flex
 
+/* pour finir la couleur de fond au milieu */
 .container-conmmand__fond
   top: 0
   left: -50%
   position: absolute
   inline-size: 100%
   block-size: 100%
-  background-color: utils.$fond-joueur-actif
+  background-color: theme.$fond-joueur-actif
   z-index: -1
 
 .container-player,
 .container-commands,
 .container-player__current-score-block
-  display: flex
+  @include mixins.flexCenter
   flex-direction: column
-  justify-content: center
-  align-items: center
