@@ -20,6 +20,12 @@ body
 .container-player__1
   background-color: theme.$fond-joueur-actif
 
+.container-player,
+.container-commands,
+.container-player__current-score-block
+  @include mixins.flexCenter
+  flex-direction: column
+
 .container-player
   inline-size: 70%
   &__player
@@ -42,7 +48,7 @@ body
       font-size: 14px
       margin-block-end: 4px
     &--score
-      font-size: 20px
+      font-size:22px
       color: theme.$white-main
   &__h1
     font-size: 40px
@@ -58,14 +64,24 @@ body
     margin-block: 8px 90px
 
 .container-commands
-  font-size: 12px
+  justify-content: start
+  font-size: 22px
   z-index: 2
   position: relative
-  inline-size: 200px
+  inline-size: 280px
   block-size: 100%
   overflow: hidden
+  &__new-game
+    margin-block-start: 30px
+    margin-block-end: 120px
+  &__dice
+    margin-block-end: 80px
+  &__roll-dice
+    margin-block-end: 20px
   &__pictoflex
     display: flex
+  & img
+    margin-inline-end: 6px
 
 /* pour finir la couleur de fond au milieu */
 .container-conmmand__fond
@@ -77,8 +93,3 @@ body
   background-color: theme.$fond-joueur-actif
   z-index: -1
 
-.container-player,
-.container-commands,
-.container-player__current-score-block
-  @include mixins.flexCenter
-  flex-direction: column
