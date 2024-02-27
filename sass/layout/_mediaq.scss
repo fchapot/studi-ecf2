@@ -1,0 +1,9 @@
+@media (max-width: 800px){
+  .main-container {
+  flex-direction: column;
+  justify-content: space-between;
+  max-inline-size: 400px;
+  max-block-size: 800px;
+  }
+
+}

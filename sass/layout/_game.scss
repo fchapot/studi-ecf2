@@ -1,0 +1,123 @@
+@use '../utils/theme';
+@use '../utils/mixins';
+@use '../utils/animations';
+
+/* ----- BODY ----- */
+
+body {
+  font-family: theme.$font-sans-serif;
+  color: theme.$black-typo;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  max-inline-size: 850px;
+  max-block-size: 520px;
+  margin-block-start: 200px;
+  margin-inline: auto;
+  margin: 200px 100px;
+  background-color: theme.$white-main;
+  border: solid 20px theme.$brown-border;
+}
+.container-player__1 {
+  background-color: theme.$fond-joueur-actif;
+}
+.container-player,
+.container-commands,
+.container-player__current-score-block {
+  @include mixins.flexCenter;
+  flex-direction: column;
+}
+.container-player {
+  inline-size: 70%;
+  &__player {
+    @include mixins.flexCenter;
+    span {
+      visibility: hidden;
+      color: theme.$red;
+      font-size: 40px;
+      margin-inline-start: 6px;
+    }
+  }
+  &--activ {
+    color: theme.$black-typo;
+    & span {
+      visibility: visible;
+    }
+  }
+  &__current-score-block {
+    font-weight: 300;
+    min-inline-size: 100px;
+    min-block-size: 70px;
+    background: theme.$red;
+    &--text {
+      font-size: 14px;
+      margin-block-end: 4px;
+    }
+    &--score {
+      font-size: 22px;
+      color: theme.$white-main;
+    }
+  }
+  &__h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-inline-start: 30px;
+    color: theme.$grey-typo;
+
+    &--activ {
+      color: theme.$black-typo;
+    }
+  }
+  &__score {
+    font-size: 70px;
+    color: theme.$red;
+    margin-block: 8px 90px;
+  }
+}
+.container-commands {
+  justify-content: start;
+  font-size: 22px;
+  z-index: 2;
+  position: relative;
+  inline-size: 280px;
+  block-size: 100%;
+  overflow: hidden;
+  &__new-game {
+    margin-block-start: 30px;
+    margin-block-end: 120px;
+  }
+  &__dice {
+    margin-block-end: 80px;
+    &--rotate {
+      animation: rollDice;
+      animation-duration: .12s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+  }
+  &__roll-dice {
+    margin-block-end: 20px;
+  }
+  &__hold {
+    margin-block-end: 80px;
+  }
+  &__pictoflex {
+    display: flex;
+  }
+  & img {
+    margin-inline-end: 6px;
+  }
+}/* pour finir la couleur de fond au milieu */
+.container-conmmand__fond {
+  top: 0;
+  left: -50%;
+  position: absolute;
+  inline-size: 100%;
+  block-size: 100%;
+  background-color: theme.$fond-joueur-actif;
+  z-index: -1;
+}

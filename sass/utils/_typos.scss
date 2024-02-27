@@ -1,0 +1,6 @@
+@use './theme';
+
+h1 {
+  font-family: theme.$font-sans-serif;
+  font-size: 600px;
+}
