@@ -1,9 +1,10 @@
-@media (max-width: 800px){
+@media (max-width: 650px){
   .main-container {
   flex-direction: column;
   justify-content: space-between;
   max-inline-size: 400px;
   max-block-size: 800px;
+  margin: 50px auto;
   }
 
 }

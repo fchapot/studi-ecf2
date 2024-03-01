@@ -17,7 +17,7 @@ body {
   max-block-size: 520px;
   margin-block-start: 200px;
   margin-inline: auto;
-  margin: 200px 100px;
+  margin: 200px auto;
   background-color: theme.$white-main;
   border: solid 20px theme.$brown-border;
 }
@@ -83,7 +83,7 @@ body {
   z-index: 2;
   position: relative;
   inline-size: 280px;
-  block-size: 100%;
+  block-size: auto;
   overflow: hidden;
   &__new-game {
     margin-block-start: 30px;
@@ -93,7 +93,7 @@ body {
     margin-block-end: 80px;
     &--rotate {
       animation: rollDice;
-      animation-duration: .12s;
+      animation-duration: .5s;
       animation-timing-function: ease-in-out;
       animation-iteration-count: infinite;
       animation-direction: alternate;
@@ -111,7 +111,8 @@ body {
   & img {
     margin-inline-end: 6px;
   }
-}/* pour finir la couleur de fond au milieu */
+}
+/* pour finir la couleur de fond au milieu */
 .container-conmmand__fond {
   top: 0;
   left: -50%;

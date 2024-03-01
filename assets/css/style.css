@@ -118,10 +118,26 @@ table {
 /* ----- ANIMATIONS ----- */
 @keyframes rollDice {
   0%, 100% {
-    transform: rotate(-15deg);
+    transform: rotate(180deg);
+  }
+  80% {
+    transform-origin: center;
+    transform: translateX(-20px) translateY(-20px);
+  }
+  60% {
+    transform-origin: center;
+    transform: translateX(20px) translateY(20px);
   }
   50% {
-    transform: rotate(15deg);
+    transform: rotate(180deg);
+  }
+  35% {
+    transform-origin: center;
+    transform: translateX(-10px) translateY(-20px);
+  }
+  20% {
+    transform-origin: center;
+    transform: translateX(10px) translateY(20px);
   }
 }
 /* ----- BODY ----- */
@@ -139,7 +155,7 @@ body {
   max-block-size: 520px;
   margin-block-start: 200px;
   margin-inline: auto;
-  margin: 200px 100px;
+  margin: 200px auto;
   background-color: #fff;
   border: solid 20px #b29878;
 }
@@ -212,7 +228,7 @@ body {
   z-index: 2;
   position: relative;
   inline-size: 280px;
-  block-size: 100%;
+  block-size: auto;
   overflow: hidden;
 }
 .container-commands__new-game {
@@ -224,7 +240,7 @@ body {
 }
 .container-commands__dice--rotate {
   animation: rollDice;
-  animation-duration: 0.12s;
+  animation-duration: 0.5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-direction: alternate;
@@ -253,12 +269,13 @@ body {
   z-index: -1;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 650px) {
   .main-container {
     flex-direction: column;
     justify-content: space-between;
     max-inline-size: 400px;
     max-block-size: 800px;
+    margin: 50px auto;
   }
 }
 

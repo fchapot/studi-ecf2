@@ -31,17 +31,17 @@
         <img src="assets/img/plus.png" alt="" width="25" height="25">
         <p class="container-commands__new-game--text">new game</p>
       </div>
-      <div class="container-commands__dice container-commands__dice--rotateXXX">
-        <img src="assets/img/dice-5.png" alt="Dice">
+      <div id="dice" class="container-commands__dice">
+        <img id="randomImage" src="assets/img/dice-6.png" alt="Dice">
       </div>
-      <div class="container-commands__pictoflex container-commands__roll-dice">
+      <button id="startButton" class="container-commands__pictoflex container-commands__roll-dice">
         <img src="assets/img/dice-xxl.png" alt="Roll Dice" width="25" height="25">
         <p class="container-commands__roll-dice--text">roll dice</p>
-      </div>
-      <div class="container-commands__pictoflex container-commands__hold">
+      </button>
+      <button id="stopButton" class="container-commands__pictoflex container-commands__hold">
         <img src="assets/img/hold2.png" alt="Download" width="25" height="25">
         <p class="container-commands__hold--text">hold</p>
-      </div>
+      </button>
       <div class="container-conmmand__fond"></div>
     </section>
 
@@ -60,5 +60,5 @@
   </div>
 
 </body>
-
+<script src="js/script.js"></script>
 </html>

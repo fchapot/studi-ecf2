@@ -4,9 +4,25 @@
 @keyframes rollDice {
   0%,
   100% {
-    transform: rotate(-15deg);
+    transform: rotate(180deg);
+  }
+  80% {
+    transform-origin: center;
+    transform: translateX(-20px) translateY(-20px);
+  }
+  60% {
+    transform-origin: center;
+    transform: translateX(20px) translateY(20px);
   }
   50% {
-    transform: rotate(15deg);
+    transform: rotate(180deg);
+  }
+  35% {
+    transform-origin: center;
+    transform: translateX(-10px) translateY(-20px);
+  }
+  20% {
+    transform-origin: center;
+    transform: translateX(10px) translateY(20px);
   }
 };
