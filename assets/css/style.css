@@ -115,6 +115,10 @@ table {
   border-spacing: 0;
 }
 
+button {
+  font-size: inherit;
+}
+
 /* ----- ANIMATIONS ----- */
 @keyframes rollDice {
   0%, 100% {
@@ -160,10 +164,6 @@ body {
   border: solid 20px #b29878;
 }
 
-.container-player__1 {
-  background-color: #ececec;
-}
-
 .container-player,
 .container-commands,
 .container-player__current-score-block {
@@ -188,6 +188,7 @@ body {
   margin-inline-start: 6px;
 }
 .container-player--activ {
+  background-color: #ececec;
   color: #505050;
 }
 .container-player--activ span {
@@ -259,7 +260,7 @@ body {
 }
 
 /* pour finir la couleur de fond au milieu */
-.container-conmmand__fond {
+.container-conmmand__fond, .container-conmmand__fond--activ {
   top: 0;
   left: -50%;
   position: absolute;
@@ -267,6 +268,13 @@ body {
   block-size: 100%;
   background-color: #ececec;
   z-index: -1;
+}
+.container-conmmand__fond--activ {
+  left: 50%;
+}
+
+button {
+  border: 0;
 }
 
 @media (max-width: 650px) {

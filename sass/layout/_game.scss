@@ -21,9 +21,7 @@ body {
   background-color: theme.$white-main;
   border: solid 20px theme.$brown-border;
 }
-.container-player__1 {
-  background-color: theme.$fond-joueur-actif;
-}
+
 .container-player,
 .container-commands,
 .container-player__current-score-block {
@@ -42,6 +40,7 @@ body {
     }
   }
   &--activ {
+    background-color: theme.$fond-joueur-actif;
     color: theme.$black-typo;
     & span {
       visibility: visible;
@@ -121,4 +120,8 @@ body {
   block-size: 100%;
   background-color: theme.$fond-joueur-actif;
   z-index: -1;
+  &--activ {
+    @extend .container-conmmand__fond;
+    left: 50%;
+  }
 }
