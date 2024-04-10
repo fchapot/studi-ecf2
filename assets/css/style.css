@@ -144,6 +144,30 @@ button {
     transform: translateX(10px) translateY(20px);
   }
 }
+@keyframes rollScore {
+  0%, 100% {
+    transform: rotate(2deg);
+  }
+  80% {
+    transform-origin: center;
+    transform: translateX(-2px) translateY(-2px);
+  }
+  60% {
+    transform-origin: center;
+    transform: translateX(2px) translateY(2px);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+  35% {
+    transform-origin: center;
+    transform: translateX(-2px) translateY(-2px);
+  }
+  20% {
+    transform-origin: center;
+    transform: translateX(2px) translateY(2px);
+  }
+}
 /* ----- BODY ----- */
 body {
   font-family: "Lato", sans-serif;
@@ -208,6 +232,13 @@ body {
   font-size: 22px;
   color: #fff;
 }
+.container-player__current-score-block--rotate {
+  animation: rollScore;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
 .container-player__h1 {
   font-size: 40px;
   text-transform: uppercase;
@@ -235,6 +266,7 @@ body {
 .container-commands__new-game {
   margin-block-start: 30px;
   margin-block-end: 120px;
+  cursor: crosshair;
 }
 .container-commands__dice {
   margin-block-end: 80px;
@@ -248,9 +280,11 @@ body {
 }
 .container-commands__roll-dice {
   margin-block-end: 20px;
+  cursor: pointer;
 }
 .container-commands__hold {
   margin-block-end: 80px;
+  cursor: grab;
 }
 .container-commands__pictoflex {
   display: flex;

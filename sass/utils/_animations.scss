@@ -26,3 +26,29 @@
     transform: translateX(10px) translateY(20px);
   }
 };
+
+@keyframes rollScore {
+  0%,
+  100% {
+    transform: rotate(2deg);
+  }
+  80% {
+    transform-origin: center;
+    transform: translateX(-2px) translateY(-2px);
+  }
+  60% {
+    transform-origin: center;
+    transform: translateX(2px) translateY(2px);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+  35% {
+    transform-origin: center;
+    transform: translateX(-2px) translateY(-2px);
+  }
+  20% {
+    transform-origin: center;
+    transform: translateX(2px) translateY(2px);
+  }
+};

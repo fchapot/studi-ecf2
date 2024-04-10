@@ -59,6 +59,13 @@ body {
       font-size: 22px;
       color: theme.$white-main;
     }
+    &--rotate {
+      animation: rollScore;
+      animation-duration: .2s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
   }
   &__h1 {
     font-size: 40px;
@@ -87,6 +94,7 @@ body {
   &__new-game {
     margin-block-start: 30px;
     margin-block-end: 120px;
+    cursor: crosshair;
   }
   &__dice {
     margin-block-end: 80px;
@@ -100,9 +108,11 @@ body {
   }
   &__roll-dice {
     margin-block-end: 20px;
+    cursor: pointer;
   }
   &__hold {
     margin-block-end: 80px;
+    cursor: grab;
   }
   &__pictoflex {
     display: flex;

@@ -24,7 +24,7 @@ function afficherImageAleatoire() {
 }
 // Démarrer le défilement des images
 
-var dice = document.getElementById("dice");
+const dice = document.getElementById("dice");
 
 function demarrerDefilement() {
   afficherImageAleatoire(); // Affiche une image aléatoire dès le début
@@ -41,61 +41,61 @@ function demarrerDefilement() {
     calcCurrentScore();
   }
 
-  // Stocker les points dans le total par joueur 
+  // Shake Score Panel
 
-  function holdScore() {
-    total_p1 += currentScore;
-    let affTotalP1 = document.getElementById("total-p1");
-    affTotalP1.innerHTML = total_p1;
-    currentscore_p1.innerHTML = 0;
+  const scorePanel = document.getElementById("score-panel");
+
+  function scorePanelShake() {
+    scorePanel.classList.toggle("container-player__current-score-block--rotate");
+    setTimeout(function() {
+    scorePanel.classList.toggle("container-player__current-score-block--rotate");
+    }, 200);
   }
 
-  // Toggle Player 
+    // Stocker les points dans le total par joueur
 
-  function toggleClass(element, className) {
-    if (element.classList.contains(className)) {
-      // La classe est présente, donc la retirer
-      element.classList.remove(className);
-    } else {
-      // La classe n'est pas présente, donc l'ajouter
-      element.classList.add(className);
-    }
-    //var element = document.querySelector('.container-conmmand__fond ');
-    
-    /* // Vérifier si l'élément existe
-    if (element.style.left = '-50%') {
-        element.style.left = '50%';
-    } else if (element.style.left = '50%') {
-      element.style.left = '-50%';
-    } */
-  }
-  
   const player_1 = document.getElementById("player-1")
   const player_2 = document.getElementById("player-2")
   const command_panel = document.getElementById("command-panel")
   
-  const holdButton = document.getElementById("hold-button")
-  holdButton.addEventListener("click", holdScore);
+    // Toggle Player 
+    function toggleClass(element, className) {
+      if (element.classList.contains(className)) {
+        // La classe est présente, donc la retirer
+        element.classList.remove(className);
+      } else {
+        // La classe n'est pas présente, donc l'ajouter
+        element.classList.add(className);
+      }
+    }
 
-  // Au clic sur le bouton, la classe "activ" sera ajoutée ou retirée
-holdButton.addEventListener('click', function() {
-  toggleClass(player_1, 'container-player--activ');
-  toggleClass(player_2, 'container-player--activ');
-  toggleClass(command_panel, 'container-conmmand__fond--activ');
-});
+  function holdScoreAndChange() {
+    scorePanelShake();
+    total_p1 += currentScore;
+    let affTotalP1 = document.getElementById("total-p1");
+    affTotalP1.innerHTML = total_p1;
+    currentscore_p1.innerHTML = 0;
+    currentScore = 0;
+    toggleClass(player_1, 'container-player--activ');
+    toggleClass(player_2, 'container-player--activ');
+    toggleClass(command_panel, 'container-conmmand__fond--activ');
+  }
+  
+  const holdButton = document.getElementById("hold-button")
+  holdButton.addEventListener("click", holdScoreAndChange);
 
 
   // Associer les boutons aux fonctions
-  const startButton = document.getElementById("start-button");
-  startButton.addEventListener("click", demarrerDefilement);
-
+  const rollDice = document.getElementById("rolldice-button");
+  rollDice.addEventListener("click", demarrerDefilement);
 
 // Calcul et Stockage du données
 let currentscore_p1 = document.getElementById("currentscore_p1");
 
 function calcCurrentScore() {
   if (score == 1){
-    currentScore = 0
+    currentScore = 0;
+    holdScoreAndChange();
   }
   else {
     currentScore += score;
