@@ -124,6 +124,7 @@ function demarrerDefilement() {
       currentScore = 0;
       whoIsPlaying = 'p1';
     }
+    setTimeout(whoIsWinner, 100);
   }
   
     // Associer les boutons aux fonctions
@@ -156,5 +157,14 @@ function calcCurrentScore() {
   else {
     console.log("Pas de joueur courant");
   }
-}
 
+}
+// fin de la partie
+function whoIsWinner(){
+  if(total_p1 >= 100){
+    alert('Player One Win !!!');
+  }
+  else if (total_p2 >= 100) {
+    alert('Player Two Win !!!');
+  }
+}
