@@ -13,11 +13,11 @@ body {
 .main-container {
   display: flex;
   justify-content: space-between;
-  max-inline-size: 850px;
-  max-block-size: 520px;
+  max-width: 850px;
+  max-height: 520px;
   margin-block-start: 200px;
   margin-inline: auto;
-  margin: 200px auto;
+  margin: 100px auto;
   background-color: theme.$white-main;
   border: solid 20px theme.$brown-border;
 }
@@ -69,6 +69,7 @@ body {
   }
   &__h1 {
     font-size: 40px;
+    font-weight: 100;
     text-transform: uppercase;
     margin-inline-start: 30px;
     color: theme.$grey-typo;

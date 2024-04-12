@@ -1,10 +1,78 @@
-@media (max-width: 650px){
+@media (max-width: 650px) {
   .main-container {
   flex-direction: column;
-  justify-content: space-between;
-  max-inline-size: 400px;
-  max-block-size: 800px;
-  margin: 50px auto;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: 0;
+  max-height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
   }
+  .container-player {
+    inline-size: 100%;
+    border: 1px solid silver;
+  }
+  .container-conmmand__fond, .container-conmmand__fond--activ {
+    display: none;
+  }
+  .container-commands__new-game {
+    margin-block: 15px;
+  }
+  .container-commands {
+    overflow: visible;
+  }
+  .container-commands__roll-dice {
+    margin-block: 15px;
+  }
+  .container-commands__dice {
+    margin-block: 20px;
+  }
+  .container-player__score {
+    margin-block: 20px;
+  }
+  .container-commands__hold {
+    margin-block-end: 15px;
+  }
+}
+
+@media (max-width: 375px) {
+  .main-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-block-start: 0;
+    max-inline-size: 400px;
+    max-block-size: 800px;
+    margin: 0 auto;
+    }
+    .container-player {
+      inline-size: 100%;
+      border: 1px solid silver;
+    }
+    .container-conmmand__fond, .container-conmmand__fond--activ {
+      display: none;
+    }
+    .container-commands__new-game {
+      margin-block: 5px;
+    }
+    .container-commands {
+      overflow: visible;
+    }
+    .container-commands__roll-dice {
+      margin-block: 10px;
+    }
+    .container-commands__dice {
+      margin-block: 5px;
+    }
+    .container-player__score {
+      margin-block: 5px;
+      font-size: 50px;
+    }
+    .container-commands__hold {
+      margin-block-end: 5px;
+    }
+    .container-player__h1 {
+      font-size: 30px;
+    }
 
 }
