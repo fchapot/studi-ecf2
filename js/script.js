@@ -15,6 +15,22 @@ let currentScore = 0; // Pour stocker le score total des lancés
 let total_p1 = 0 // Pour stocker le score total du player 1
 let total_p2 = 0 // Pour stocker le score total du player 2
 
+// Gestion des sons
+function preloadSound(soundName) {
+  const audio = new Audio(`assets/sound/${soundName}`);
+  audio.id = "preloadAudio";
+  audio.preload = "auto";
+  document.body.appendChild(audio);
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  preloadSound('caisse.mp3');
+  preloadSound('des.m4a');
+  preloadSound('loose.mp3');
+  preloadSound('newgame.m4a');
+  }
+);
+
 function playSound(soundName) {
   const audio = new Audio(`assets/sound/${soundName}`);
   audio.play();
@@ -66,7 +82,7 @@ function afficherImageAleatoire() {
 const dice = document.getElementById('dice');
 
 function demarrerDefilement() {
-  playSound('des4.m4a');
+  playSound('des.m4a');
   afficherImageAleatoire(); // Affiche une image aléatoire dès le début
   intervalId = setInterval(afficherImageAleatoire, 100);
   dice.classList.toggle('container-commands__dice--rotate');
@@ -89,7 +105,7 @@ rollDice.addEventListener('click', demarrerDefilement);
 
   function scorePanelShake() {
     if (score != 1){
-      playSound('SFB-caisse2.mp3');
+      playSound('caisse.mp3');
     }
     if(whoIsPlaying === 'p1') {
       scorePanelP1.classList.toggle('container-player__current-score-block--rotate');

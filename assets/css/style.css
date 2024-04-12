@@ -258,7 +258,7 @@ body {
   font-size: 22px;
   z-index: 2;
   position: relative;
-  inline-size: 280px;
+  inline-size: 100%;
   block-size: auto;
   overflow: hidden;
 }
@@ -313,14 +313,16 @@ button {
 @media (max-width: 650px) {
   .main-container {
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-block-start: 0;
-    max-height: 100%;
+    height: 100vh;
     max-width: 100%;
+    max-height: 100%;
     margin: 0 auto;
   }
   .container-player {
+    justify-content: space-between;
     inline-size: 100%;
     border: 1px solid silver;
   }
@@ -331,6 +333,7 @@ button {
     margin-block: 15px;
   }
   .container-commands {
+    justify-content: space-between;
     overflow: visible;
   }
   .container-commands__roll-dice {
@@ -340,7 +343,7 @@ button {
     margin-block: 20px;
   }
   .container-player__score {
-    margin-block: 20px;
+    margin-block: 0;
   }
   .container-commands__hold {
     margin-block-end: 15px;
@@ -349,11 +352,10 @@ button {
 @media (max-width: 375px) {
   .main-container {
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-block-start: 0;
-    max-inline-size: 400px;
-    max-block-size: 800px;
+    height: 100vh;
     margin: 0 auto;
   }
   .container-player {
