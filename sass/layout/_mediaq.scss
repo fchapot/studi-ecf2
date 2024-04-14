@@ -74,7 +74,20 @@
       margin-block-end: 5px;
     }
     .container-player__h1 {
-      font-size: 30px;
+      font-size: 25px;
+    }
+    p {
+      font-size: 0.7em;
+    }
+    .container-player__current-score-block {
+      min-block-size: 40px;
+    }
+    .container-player__current-score-block--text {
+      font-size: 12px;
+      margin-block-end: 0;
+    }
+    #dice img {
+      width: 70px;
     }
 
 }

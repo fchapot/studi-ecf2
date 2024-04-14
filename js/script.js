@@ -176,9 +176,9 @@ function calcCurrentScore() {
 // fin de la partie
 function whoIsWinner(){
   if(total_p1 >= 100){
-    alert('Player One Win !!!');
+    alert('Player One Wins !!!');
   }
   else if (total_p2 >= 100) {
-    alert('Player Two Win !!!');
+    alert('Player Two Wins !!!');
   }
 }
