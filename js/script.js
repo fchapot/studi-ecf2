@@ -14,6 +14,7 @@ let score = 0; // Pour stocker le chiffre du lancé
 let currentScore = 0; // Pour stocker le score total des lancés
 let total_p1 = 0 // Pour stocker le score total du player 1
 let total_p2 = 0 // Pour stocker le score total du player 2
+let rollDiceDuration = Math.round(Math.random() * (1000) + 100);
 
 const largeur = window.innerWidth; // Pour vérifiuer si on est sur un mobile pour couper le son
 
@@ -92,7 +93,7 @@ function demarrerDefilement() {
   afficherImageAleatoire(); // Affiche une image aléatoire dès le début
   intervalId = setInterval(afficherImageAleatoire, 100);
   dice.classList.toggle('container-commands__dice--rotate');
-  setTimeout(arreterDefilement, 1000);
+  setTimeout(arreterDefilement, rollDiceDuration);
   // Activer le bouton "HOLD" une fois que les dés ont été lancés
   holdButton.disabled = false;
 }
@@ -102,6 +103,7 @@ function arreterDefilement() {
   dice.classList.toggle('container-commands__dice--rotate');
   score = randomIndex + 1;
   calcCurrentScore();
+  rollDiceDuration = Math.random() * (1000 - 500) + 500;
 }
 
 const rollDice = document.getElementById('rolldice-button');
