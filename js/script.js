@@ -15,6 +15,8 @@ let currentScore = 0; // Pour stocker le score total des lancés
 let total_p1 = 0 // Pour stocker le score total du player 1
 let total_p2 = 0 // Pour stocker le score total du player 2
 
+const largeur = window.innerWidth; // Pour vérifiuer si on est sur un mobile pour couper le son
+
 // Gestion des sons
 function preloadSound(soundName) {
   const audio = new Audio(`assets/sound/${soundName}`);
@@ -33,7 +35,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function playSound(soundName) {
   const audio = new Audio(`assets/sound/${soundName}`);
+  if (largeur > 650){
   audio.play();
+  }
 }
 
 // New Game
@@ -53,7 +57,9 @@ function newGame() {
   player_2.classList.remove('container-player--activ');
   player_1.classList.add('container-player--activ');
   command_panel.classList.remove('container-conmmand__fond--activ');
+  holdButton.disabled = true; // Désactiver le bouton HOLD sur une nouvelle partie
 }
+
 newGameButton.addEventListener('click', newGame);
 
 // Bascule graphique
@@ -87,6 +93,8 @@ function demarrerDefilement() {
   intervalId = setInterval(afficherImageAleatoire, 100);
   dice.classList.toggle('container-commands__dice--rotate');
   setTimeout(arreterDefilement, 1000);
+  // Activer le bouton "HOLD" une fois que les dés ont été lancés
+  holdButton.disabled = false;
 }
 
 function arreterDefilement() {
@@ -144,9 +152,13 @@ rollDice.addEventListener('click', demarrerDefilement);
       whoIsPlaying = 'p1';
     }
     setTimeout(whoIsWinner, 100);
+
+  holdButton.disabled = true; // Désactiver le bouton HOLD au changement de joueur
   }
-  
-  const holdButton = document.getElementById('hold-button')
+
+  const holdButton = document.getElementById('hold-button');
+  holdButton.disabled = true; // Désactiver le bouton HOLD initialement
+
   holdButton.addEventListener('click', holdScoreAndChange);
 
 // Calcul et Stockage du données
@@ -167,9 +179,6 @@ function calcCurrentScore() {
   }
   else if(whoIsPlaying === 'p2'){
     currentscore_p2.innerHTML = currentScore;
-  }
-  else {
-    console.log("Pas de joueur courant");
   }
 
 }

@@ -113,10 +113,6 @@ table {
   border-spacing: 0;
 }
 
-button {
-  font-size: inherit;
-}
-
 /* ----- ANIMATIONS ----- */
 @keyframes rollDice {
   0%, 100% {
@@ -292,7 +288,7 @@ body {
   margin-inline-end: 6px;
 }
 
-/* pour finir la couleur de fond au milieu */
+/* pour finir la couleur de fond de la section commande */
 .container-conmmand__fond, .container-conmmand__fond--activ {
   top: 0;
   left: -50%;
@@ -308,6 +304,11 @@ body {
 
 button {
   border: 0;
+  text-transform: uppercase;
+  font-weight: 100;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 @media (max-width: 650px) {
@@ -333,8 +334,10 @@ button {
     margin-block: 15px;
   }
   .container-commands {
-    justify-content: space-between;
+    flex-grow: 1;
+    justify-content: space-around;
     overflow: visible;
+    font-size: 32px;
   }
   .container-commands__roll-dice {
     margin-block: 15px;
@@ -349,7 +352,10 @@ button {
     margin-block-end: 15px;
   }
 }
-@media (max-width: 375px) {
+@media (max-width: 400px) {
+  body {
+    font-weight: 400;
+  }
   .main-container {
     flex-direction: column;
     justify-content: space-between;
@@ -385,7 +391,8 @@ button {
     margin-block-end: 5px;
   }
   .container-player__h1 {
-    font-size: 25px;
+    font-weight: 400;
+    font-size: 35px;
   }
   p {
     font-size: 0.7em;

@@ -21,8 +21,10 @@
     margin-block: 15px;
   }
   .container-commands {
-    justify-content: space-between;
+    flex-grow: 1;
+    justify-content: space-around;
     overflow: visible;
+    font-size: 32px;
   }
   .container-commands__roll-dice {
     margin-block: 15px;
@@ -38,7 +40,10 @@
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 400px) {
+  body {
+    font-weight: 400;
+  }
   .main-container {
     flex-direction: column;
     justify-content: space-between;
@@ -74,7 +79,8 @@
       margin-block-end: 5px;
     }
     .container-player__h1 {
-      font-size: 25px;
+      font-weight: 400;
+      font-size: 35px;
     }
     p {
       font-size: 0.7em;
